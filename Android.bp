@@ -34,29 +34,20 @@ license {
     ],
 }
 
-rust_defaults {
-    name: "cesu8_test_defaults",
-    crate_name: "cesu8",
+rust_test {
+    name: "cesu8_test_src_lib",
     // has rustc warnings
-    srcs: ["src/lib.rs"],
+    host_supported: true,
+    crate_name: "cesu8",
     cargo_env_compat: true,
     cargo_pkg_version: "1.1.0",
+    srcs: ["src/lib.rs"],
     test_suites: ["general-tests"],
     auto_gen_config: true,
-    edition: "2015",
-}
-
-rust_test_host {
-    name: "cesu8_host_test_src_lib",
-    defaults: ["cesu8_test_defaults"],
     test_options: {
         unit_test: true,
     },
-}
-
-rust_test {
-    name: "cesu8_device_test_src_lib",
-    defaults: ["cesu8_test_defaults"],
+    edition: "2015",
 }
 
 rust_library {
