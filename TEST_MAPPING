@@ -5,6 +5,11 @@
       "path": "external/rust/crates/jni"
     }
   ],
+  "postsubmit": [
+    {
+      "name": "cesu8_test_src_lib"
+    }
+  ],
   "presubmit": [
     {
       "name": "cesu8_test_src_lib"
